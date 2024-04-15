@@ -1,0 +1,11 @@
+[target.riscv32imafc-unknown-none-elf]
+runner = "/home/zhang/MRS_Toolchain_Linux_x64_V1.91/RISC-V_Embedded_GCC/bin/riscv-none-embed-gdb -q -x gdb_init"
+# linker = "/home/zhang/MRS_Toolchain_Linux_x64_V1.91/RISC-V_Embedded_GCC/bin/riscv-none-embed-ld"
+rustflags = [
+  "-C", "link-arg=-Tmemory.x",
+  "-C", "link-arg=-Tlink.x",
+  # "-C", "link-arg=-TLink.ld",  
+]
+
+[build]
+target = "riscv32imafc-unknown-none-elf"
